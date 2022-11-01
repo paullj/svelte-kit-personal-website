@@ -1,0 +1,11 @@
+# Title displayed on the front page
+title: Your Name
+# Short subtitle displayed on the front page
+subtitle: Hello, welcome to my website!
+# Links displayed on the front page, can be an internal, external or email url
+links:
+  Home: /
+  About: /about
+  Email: mailto:your@email.com
+  LinkedIn: https://www.linkedin.com/
+  GitHub: https://www.github.com/

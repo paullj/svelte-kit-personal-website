@@ -1,0 +1,13 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply text-black bg-primary-10;
+  @apply transition subpixel-antialiased;
+}
+
+html.dark {
+  @apply text-primary-20 bg-primary-50;
+}

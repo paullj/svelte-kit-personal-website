@@ -1,0 +1,27 @@
+# Short summary to display on the about page, you can use markdown
+summary: Hi! This is a short summary or bio where you can write more about yourself
+# The sections of the about page, each section can contain a list of entries with:
+# A title, subtitle, date, object of links, and description (which you can use markdown in)
+sections:
+  education:
+    - title: Course Title
+      subtitle: University Name
+      date: 2017-2020
+      description: |
+        * You can optionally add more info here. Supports _markdown_
+        * Some important bullet points
+  experience:
+    - title: Job Title
+      subtitle: Company Name
+      date: 2020-2022
+      description: |
+        Write what you did in your role here
+  projects:
+    - title: Project Name
+      subtitle: Personal Project
+      date: 2022
+      links:
+        Live Site: /
+        GitHub: /
+      description: |
+        * You can add in whatever description you want here
