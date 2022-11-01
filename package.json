@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "clean": "rimraf build",
     "predeploy": "pnpm clean && pnpm build",
-    "deploy": "NODE_ENV=production gh-pages -b deploy -d build -t true",
+    "deploy": "DEPLOY=true gh-pages -b deploy -d build -t true",
     "test": "playwright test",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

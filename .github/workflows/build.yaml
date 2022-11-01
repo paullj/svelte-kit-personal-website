@@ -42,6 +42,6 @@ jobs:
       - name: Build and Push
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          GITHUB_TOKEN=${GITHUB_TOKEN} pnpm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+          GITHUB_TOKEN=${GITHUB_TOKEN} DEPLOY=True pnpm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

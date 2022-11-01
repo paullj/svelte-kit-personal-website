@@ -2,7 +2,7 @@ import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import importAssets from 'svelte-preprocess-import-assets';
 
-const dev = process.env.NODE_ENV === 'development';
+const dev = process.env.NODE_ENV === 'development' || process.env.DEPLOY !== 'true';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -21,9 +21,6 @@ const config = {
     paths: {
       base: dev ? '' : '/svelte-kit-personal-website'
     },
-    // If you are not using a .nojekyll file, change your appDir to something not starting with an underscore.
-    // For example, instead of '_app', use 'app_', 'internal', etc.
-    appDir: 'internal',
     alias: {
       $content: 'content'
     }
