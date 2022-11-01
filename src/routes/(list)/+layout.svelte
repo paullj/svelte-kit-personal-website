@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { page } from '$app/stores';
   import home from '$content/home.yaml';
 
@@ -25,7 +26,7 @@
 <div class="flex flex-row justify-between mb-12 space-x-1 text-base sm:space-x-8 sm:justify-start">
   {#each Object.entries(home.links) as [type, url]}
     <a
-      href={url}
+      href={isExternalLink(url) ? url : `${base}${url}`}
       class="text-primary-40 dark:text-primary-30 decoration-2 hover:underline underline-offset-4 hover:text-accent-light dark:hover:text-accent-dark aria-selected:text-accent-light dark:aria-selected:text-accent-dark"
       target={isExternalLink(url) ? '_blank' : undefined}
       rel={isExternalLink(url) ? 'noopener noreferrer' : undefined}

@@ -2,6 +2,7 @@
   import { formatDate, formatDay } from '$lib/utils';
   import type { Post } from '$lib/types/Post';
   import { postsPerPage } from '$lib/config';
+  import { base } from '$app/paths';
 
   export let posts: Pick<Post, 'title' | 'slug' | 'publishedAt'>[] = [];
   export let emptyMessage = 'No posts to show!';
@@ -18,7 +19,7 @@
       </time>
       <div class="text-base sm:text-lg whitespace-nowrap overflow-clip text-ellipsis">
         <a
-          href="/posts/{post.slug}"
+          href="{base}/posts/{post.slug}"
           class="text-lg hover:underline overflow-clip"
           data-sveltekit:prefetch
         >
