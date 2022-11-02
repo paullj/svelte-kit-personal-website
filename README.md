@@ -20,15 +20,21 @@ Although the site is designed to be minimal it is packed with useful features:
 - Related Posts
 - Privacy focused analytics
 
+## Installing
+
+## Creating Content
 All posts are located in the `/content` folder along with additional content.
 
-TODO:
-- get markdown rendering to be better
-  - oembed
+## Deploying
+
+## To Do
+- [ ] Fix github pages deploy when using a path (user.github.io/repo)
+- [ ] Improve markdown rendering
+  - [ ] oembed
     - fix sizing
-  - charts
+  - [ ] charts
     - uses directives
-  - images
+  - [ ] images
     - generate srcset
     - lazy load
-- search make it persist index
+- [ ] Use persisted search index
