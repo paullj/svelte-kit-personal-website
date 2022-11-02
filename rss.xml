@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Your Name RSS Feed]]></title>
+        <description><![CDATA[Your Name RSS Feed]]></description>
+        <link>http://github.com/dylang/node-rss</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Wed, 02 Nov 2022 02:12:48 GMT</lastBuildDate>
+        <atom:link href="undefined/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Automatic Images]]></title>
+            <link>undefined/posts/images</link>
+            <guid isPermaLink="true">undefined/posts/images</guid>
+            <pubDate>Thu, 03 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Basic Post]]></title>
+            <link>undefined/posts/basic-post</link>
+            <guid isPermaLink="true">undefined/posts/basic-post</guid>
+            <pubDate>Tue, 01 Nov 2022 22:30:04 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Customising Your Website]]></title>
+            <description><![CDATA[You can customise the website to fit your needs by editing a few config files.]]></description>
+            <link>undefined/posts/customisation</link>
+            <guid isPermaLink="true">undefined/posts/customisation</guid>
+            <pubDate>Sat, 05 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Extended Markdown Post]]></title>
+            <description><![CDATA[You can add a description using the YAML frontmatter as well]]></description>
+            <link>undefined/posts/a-different-slug</link>
+            <guid isPermaLink="true">undefined/posts/a-different-slug</guid>
+            <category><![CDATA[YAML]]></category>
+            <category><![CDATA[Markdown]]></category>
+            <pubDate>Wed, 02 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Search, SEO, Comments and More!]]></title>
+            <description><![CDATA[In addition to the extended markdown, this site also has, SEO, fuzzy search, automatic related posts, dark mode, analytics, comments, and reactions.]]></description>
+            <link>undefined/posts/other-features</link>
+            <guid isPermaLink="true">undefined/posts/other-features</guid>
+            <pubDate>Fri, 04 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
