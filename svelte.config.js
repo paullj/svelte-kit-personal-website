@@ -12,11 +12,15 @@ const config = {
   preprocess: [
     importAssets(),
     preprocess({
+      preserve: ['ld+json'],
       typescript: true,
       postcss: true
     })
   ],
   kit: {
+    prerender: {
+      entries: ['*', '/api/image.png']
+    },
     adapter: adapter(),
     paths: {
       base: dev ? '' : '/svelte-kit-personal-website'

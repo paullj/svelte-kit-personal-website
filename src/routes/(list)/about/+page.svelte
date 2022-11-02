@@ -1,8 +1,37 @@
 <script lang="ts">
   import type { PageData } from './$types';
+  import SvelteSEO from 'svelte-seo';
+
+  import home from '$content/home.yaml';
+  import seo from '$content/seo.yaml';
+  import { page } from '$app/stores';
+  import { ogImageDimmensions } from '$lib/config';
 
   export let data: PageData;
+
+  const seoTitle = `${seo.title ?? home.title} - About`;
+  const seoDescription = seo.description ?? home.subtitle;
 </script>
+
+<SvelteSEO
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seo.keywords?.join(', ')}
+  openGraph={{
+    title: seoTitle,
+    description: seoDescription,
+    url: seo.url ?? $page.url.toString(),
+    type: 'website',
+    images: [
+      {
+        url: `/api/image.png`,
+        width: ogImageDimmensions.width,
+        height: ogImageDimmensions.height,
+        alt: `${seo.title ?? home.title} Open Graph image`
+      }
+    ]
+  }}
+/>
 
 {#if data.summary}
   <p class="mb-4 prose prose-sky dark:prose-invert font-extralight">

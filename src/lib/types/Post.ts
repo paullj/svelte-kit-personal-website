@@ -1,3 +1,5 @@
+import type { SEO } from './SEO';
+
 interface Post {
   title: string;
   slug: string;
@@ -10,6 +12,7 @@ interface Post {
   content?: string;
   readingTime: number;
   related?: Pick<Post, 'title' | 'slug' | 'publishedAt'>[];
+  seo?: SEO;
 }
 
 export type { Post };

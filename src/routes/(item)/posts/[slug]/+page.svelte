@@ -8,9 +8,45 @@
 
   import type { PageData } from './$types';
   import ShareButtons from '$lib/components/ShareButtons.svelte';
+  import SvelteSEO from 'svelte-seo';
+
+  import home from '$content/home.yaml';
+  import seo from '$content/seo.yaml';
+  import { page } from '$app/stores';
+  import { ogImageDimmensions } from '$lib/config';
 
   export let data: PageData;
+
+  const seoTitle = `${seo.title ?? home.title} - ${data.seo?.title ?? data.title}`;
+  const seoDescription = data.seo?.description ?? seo.description ?? home.subtitle;
 </script>
+
+<!-- This seems quite hacky... -->
+<a href={`/api/posts/${data.slug}/image.png`} class="hidden">OG Image</a>
+
+<SvelteSEO
+  title={seoTitle}
+  description={seoDescription}
+  keywords={data.keywords?.join(', ')}
+  openGraph={{
+    title: seoTitle,
+    description: seoDescription,
+    url: data.seo?.url ?? $page.url.toString(),
+    type: 'article',
+    article: {
+      publishedTime: data.publishedAt.toString(),
+      tags: data.categories ?? []
+    },
+    images: [
+      {
+        url: `/api/posts/${data.slug}/image.png`,
+        width: ogImageDimmensions.width,
+        height: ogImageDimmensions.height,
+        alt: `${data.title} Open Graph image`
+      }
+    ]
+  }}
+/>
 
 <time class="text-sm font-bold tracking-wide text-gray-400 uppercase">
   {formatDate(data.publishedAt)}

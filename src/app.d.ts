@@ -11,6 +11,16 @@ declare module '*about.yaml' {
   export default about;
 }
 
+declare module '*seo.yaml' {
+  const seo: import('$lib/types/SEO').SEO;
+  export default seo;
+}
+
+declare module '*?base64' {
+  const base64: string;
+  export default base64;
+}
+
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 // and what to do when importing types

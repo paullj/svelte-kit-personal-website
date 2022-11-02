@@ -16,12 +16,12 @@
         <h3 class="flex flex-row items-center space-x-2">
           <div class="underline">Posts</div>
           <a
-            href="/api/rss.xml"
+            href="/rss.xml"
             target="_blank"
             class="hover:text-orange-600 dark:hover:text-orange-400"
           >
             <svg
-              class="w-6 h-6 -mb-1"
+              class="w-5 h-5 -mb-1"
               width="100%"
               height="100%"
               viewBox="0 0 16 16"

@@ -2,12 +2,21 @@
 title: Search, SEO, Comments and More!
 publishedAt: 4 Nov 2022
 description: In addition to the extended markdown, this site also has, SEO, fuzzy search, automatic related posts, dark mode, analytics, comments, and reactions.
+seo:
+  title: Custom SEO Title
+  description: A custom description
+  keywords: [some, key, words]
 ---
 
 #### Table of Contents
 
 ## SEO
-TODO
+All posts and pages include meta tags for SEO. The included information for SEO can be edited at `content/seo.yaml`. Posts use the `title` and `description` properties by default, but can be overriden using the `seo` property in the frontmatter.
+
+A dynamic route is used for the open graph image. This route generates an image using a title and subtitle which is rendered at build time. It uses [Vercel's `satori`](https://github.com/vercel/satori) and other helper libraries to render a Svelte component to an SVG and finally a PNG. The image can be viewed at `api/posts/[slug]/image.png` and `api/image.png`, for example see below.
+
+![Image Generation for this post](/api/posts/other-features/image.png 'test').
+![Image Generation for the home page](/api/image.png 'test').
 
 ## Search
 Full body fuzzy searching is available on all posts using [lyra](https://github.com/LyraSearch/lyra). By default the search indexes the following properties: `title`, `description`, `keywords`, `categories` on each post.

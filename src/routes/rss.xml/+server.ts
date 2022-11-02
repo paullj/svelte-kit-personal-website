@@ -1,16 +1,14 @@
 import RSS from 'rss';
-import home from '$content/home.yaml';
+import seo from '$content/seo.yaml';
 import { parsePosts } from '$lib/parsers/parsePosts';
 
 import type { RequestHandler } from '@sveltejs/kit';
 
-const SITE_URL = 'https://test.com';
-
 export const GET: RequestHandler = async () => {
   const feed = new RSS({
-    title: home.title + ' RSS Feed',
-    site_url: SITE_URL,
-    feed_url: SITE_URL + '/rss.xml'
+    title: seo.title + ' RSS Feed',
+    site_url: seo.url ?? '',
+    feed_url: seo.url + '/rss.xml'
   });
 
   const posts = await parsePosts();
@@ -18,9 +16,10 @@ export const GET: RequestHandler = async () => {
   posts.forEach((post) => {
     feed.item({
       title: post.title,
-      url: SITE_URL + `/posts/${post.slug}`,
+      url: seo.url + `/posts/${post.slug}`,
       date: post.publishedAt,
-      description: post.description ?? ''
+      description: post.description ?? '',
+      categories: post.categories
     });
   });
 

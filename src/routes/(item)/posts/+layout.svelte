@@ -33,7 +33,7 @@
           /></svg
         >
       </span>
-      <span class="group-hover:underline"> Back </span>
+      <span class="group-hover:underline">Back</span>
     </span>
   </a>
 </div>
