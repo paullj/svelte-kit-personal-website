@@ -39,7 +39,7 @@
     },
     images: [
       {
-        url: `/api/posts/${data.slug}/image.png`,
+        url: `${seo.url ?? $page.url.hostname}/api/posts/${data.slug}/image.png`,
         width: ogImageDimmensions.width,
         height: ogImageDimmensions.height,
         alt: `${data.title} Open Graph image`

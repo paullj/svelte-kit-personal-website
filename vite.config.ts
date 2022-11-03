@@ -5,7 +5,7 @@ import fs from 'fs';
 
 import type { UserConfig } from 'vite';
 
-const supportedExtensions = ['png', 'jpg', 'jpeg'];
+const supportedExtensions = ['png', 'jpg', 'jpeg', 'avif'];
 
 const base64 = () => {
   return {
@@ -31,21 +31,21 @@ const config: UserConfig = {
   },
   plugins: [
     base64(),
-    sveltekit(),
+    yaml(),
     imagetools({
       defaultDirectives: (url) => {
         const extension = url.pathname.substring(url.pathname.lastIndexOf('.') + 1);
         if (supportedExtensions.includes(extension)) {
           return new URLSearchParams({
-            // format: 'avif;webp;' + extension,
-            invert: 'true',
-            w: '100'
+            format: 'webp',
+            w: '500;900;1200',
+            srcset: 'true'
           });
         }
         return new URLSearchParams();
       }
     }),
-    yaml()
+    sveltekit()
   ]
 };
 

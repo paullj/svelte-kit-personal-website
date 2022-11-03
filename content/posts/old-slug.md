@@ -26,12 +26,22 @@ and also:
 1. Numbered
 2. Lists
 
+> Blockquotes
+
+[External Links](https://example.com) automatically open in a new tab, unlike [Internal Links](/) which use the SvelteKit clientside router.
+
+Other standard markdown features like images are also included. [Read the post on images to learn more](/posts/images).
+
 ## Extensions
 This project uses [`remark`](https://github.com/remarkjs) to parse markdown and so there are a handful of useful extensions included to add even more functionality.
 
 ### TOC
 A TOC or table of contents can be added by simply adding the heading `Table of Contents` anywhere. It will populate the list of contents with headings that come after the Table of Contents. See the table of contents at the top of the post for an example.
 
+### Emphasis
+Standard markdown does not have a way to highlight/mark or underline text. With this extended renderer you can do the following:
+
+==highlight==
 
 ### GFM
 GFM or [Github Flavoured Markdown](https://github.github.com/gfm/) adds:
@@ -63,8 +73,6 @@ A note[^1]
 * [ ] to do
 * [x] done
 
-==test==
-
 ### OEmbed
 This automatically converts URLs in your markdown to the embedded version of those URLs. Its useful for adding in youtube videos into your content for example. [Learn more at oembed.com](https://oembed.com/).
 
@@ -95,4 +103,13 @@ const add = (a: number, b: number) => {
 }
 ```
 
+### Emojis
+You can insert emojis using their shortcodes in this format `:emoji:`. The full list of emojis is [here](https://raw.githubusercontent.com/omnidan/node-emoji/master/lib/emoji.json).
 
+This can be combined with other standard markdown features to 'hack' together even more functionality, for example see below.
+
+> :warning: **Warning:** Do not push the big red button.
+
+> :memo: **Note:** Sunrises are beautiful.
+
+> :bulb: **Tip:** Remember to appreciate the little things in life.

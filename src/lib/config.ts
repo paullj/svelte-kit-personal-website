@@ -6,7 +6,7 @@ const maxRelatedPosts = 3;
 const relatedPostThreshold = 0.05;
 // The maximum distance between the search term and post property
 const searchResultTolerance = 2;
-//
+// Open graph image dimmensions
 const ogImageDimmensions = {
   width: 800,
   height: 800
@@ -14,7 +14,7 @@ const ogImageDimmensions = {
 // The GitHub user for this repository
 const githubUser = 'paullj';
 // The repository name
-const githubRepo = 'paullj.github.io';
+const githubRepo = 'svelte-kit-personal-website';
 
 export {
   postsPerPage,

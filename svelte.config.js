@@ -21,7 +21,9 @@ const config = {
     prerender: {
       entries: ['*', '/api/image.png']
     },
-    adapter: adapter(),
+    adapter: adapter({
+      precompress: true
+    }),
     paths: {
       base: dev ? '' : '/svelte-kit-personal-website'
     },

@@ -24,7 +24,7 @@
     type: 'website',
     images: [
       {
-        url: `/api/image.png`,
+        url: `${seo.url ?? $page.url.hostname}/api/image.png`,
         width: ogImageDimmensions.width,
         height: ogImageDimmensions.height,
         alt: `${seo.title ?? home.title} Open Graph image`

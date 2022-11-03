@@ -36,6 +36,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "gh-pages": "^4.0.0",
+    "hast-util-has-property": "^2.0.0",
     "js-yaml": "^4.1.0",
     "nlcst-to-string": "^3.1.0",
     "postcss": "^8.4.18",
@@ -51,6 +52,7 @@
     "rehype-stringify": "^9.0.3",
     "remark": "^14.0.2",
     "remark-directive": "^2.0.1",
+    "remark-emoji": "^3.0.2",
     "remark-gfm": "^3.0.1",
     "remark-parse": "^10.0.1",
     "remark-rehype": "^10.1.0",
@@ -74,6 +76,7 @@
     "tslib": "^2.4.1",
     "typescript": "^4.7.4",
     "unified": "^10.1.2",
+    "unist-util-visit": "^4.1.1",
     "vite": "^3.2.0",
     "vite-imagetools": "^4.0.11"
   },

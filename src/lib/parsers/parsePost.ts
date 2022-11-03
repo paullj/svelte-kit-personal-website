@@ -38,7 +38,7 @@ const parsePost = async (relPath: string, fileContents: string, parseContent = f
   post.createdAt = new Date(post.createdAt);
 
   if (parseContent) {
-    post.content = await parseMarkdown(markdown);
+    post.content = await parseMarkdown(markdown, directory);
   }
 
   return post;

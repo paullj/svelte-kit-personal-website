@@ -29,6 +29,33 @@ const config = {
                 textDecorationLine: 'underline'
               }
             },
+            blockquote: {
+              fontWeight: 300,
+              fontStyle: 'normal',
+              '> p': {
+                '&::before': {
+                  content: 'none !important'
+                },
+                '&::after': {
+                  content: 'none !important'
+                }
+              }
+            },
+            'ul > li.task-list-item': {
+              listStyle: 'none'
+            },
+            'ul > li.task-list-item > input': {
+              width: '1em',
+              height: '1em',
+              marginRight: '1em',
+              marginLeft: '-1em'
+            },
+            'iframe.oembed-youtube': {
+              margin: 'auto',
+              width: '100%',
+              height: 'auto',
+              aspectRatio: 'var(--aspect-ratio, 1.78)'
+            },
             '.footnotes': {
               '> ol': {
                 '> li': {
@@ -41,6 +68,13 @@ const config = {
                     }
                   }
                 }
+              }
+            },
+            '.rehype-figure-container': {
+              display: 'flex',
+              flexDirection: 'row',
+              '> *:not(:first-child)': {
+                marginLeft: '1rem'
               }
             }
           }
