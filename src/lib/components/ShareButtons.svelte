@@ -45,7 +45,9 @@
   <a
     rel="noopener nofollow"
     target="_black"
-    href={`mailto:?subject=Post from ${domain}: ${title}&body=Here is a post from ${path}'s blog that might interest you: \n${title}\n${description}\n${url}`}
+    href={encodeURI(
+      `mailto:?subject=Post from ${domain}: ${title}&body=Here is a post from ${path}'s blog that might interest you:\n${title}\n${description}\n${url}`
+    )}
     aria-label="Share by Email"
   >
     <span class="sr-only">Email</span>
@@ -61,7 +63,7 @@
   <a
     rel="noopener nofollow"
     target="_black"
-    href={`https://twitter.com/intent/tweet/?text=${title}\n${description}&url=${url}`}
+    href={encodeURI(`https://twitter.com/intent/tweet/?text=${title}\n${description}&url=${url}`)}
     aria-label="Share on Twitter"
   >
     <span class="sr-only">Twitter</span>

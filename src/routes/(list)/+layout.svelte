@@ -2,9 +2,7 @@
   import { base } from '$app/paths';
   import { page } from '$app/stores';
   import home from '$content/home.yaml';
-
-  const isEmail = (url: string) => url.startsWith('mailto:');
-  const isExternalLink = (url: string) => url.startsWith('https://') || url.startsWith('http://');
+  import { isEmail, isExternalLink } from '$lib/utils/isExternalLink';
 
   const getPrefix = (url: string) => {
     if (isEmail(url)) return '@';

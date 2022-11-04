@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import type { Post } from '$lib/types/Post';
   import PostList from './PostList.svelte';
   import SearchInput from './SearchInput.svelte';
@@ -16,8 +17,9 @@
         <h3 class="flex flex-row items-center space-x-2">
           <div class="underline">Posts</div>
           <a
-            href="/rss.xml"
+            href="{base}/rss.xml"
             target="_blank"
+            rel="noreferrer noopener"
             class="hover:text-orange-600 dark:hover:text-orange-400"
           >
             <svg

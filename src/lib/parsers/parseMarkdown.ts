@@ -17,9 +17,11 @@ import rehypeRewriteUrls, { type TransformFn } from '$lib/utils/rehypeRewriteUrl
 import rehypePrism from 'rehype-prism-plus';
 import remarkEmbedder from '@remark-embedder/core';
 import oembedTransformer from '@remark-embedder/transformer-oembed';
+import { isExternalLink, isInternalLink } from '$lib/utils/isExternalLink';
 import type { Config } from '@remark-embedder/transformer-oembed';
 
 import path from 'node:path';
+import { base } from '$app/paths';
 
 const oembedConfig: Config = ({ url, provider }) => {
   if (provider.provider_name === 'YouTube') {
@@ -35,27 +37,31 @@ const oembedConfig: Config = ({ url, provider }) => {
   };
 };
 
-const contentFolder = '/Users/paullj/Development/svelte-kit-personal-website/content';
+const contentFolder = '../../../';
 
 const transformUrl: TransformFn = async (url, node, options) => {
   const { directory } = options;
-  if (directory && node.tagName === 'img') {
-    const isRelativeToFile = url.startsWith('./');
-    const isRelativeToContents = url.startsWith('/content');
 
-    if (isRelativeToFile || isRelativeToContents) {
-      const images = import.meta.glob<{ default: string }>([
-        '/**/*.{png,jpeg,jpg,webp,avif}',
-        '!/build/**'
-      ]);
-      if (isRelativeToFile) {
-        const absPath = path.resolve(directory, url);
-        url = `/content/${path.relative(contentFolder, absPath)}`;
+  if (isInternalLink(url)) {
+    if (directory && node.tagName === 'img') {
+      const isRelativeToFile = url.startsWith('./');
+      const isRelativeToContents = url.startsWith('/content');
+
+      if (isRelativeToFile || isRelativeToContents) {
+        const images = import.meta.glob<{ default: string }>([
+          '/**/*.{png,jpeg,jpg,webp,avif}',
+          '!/build/**'
+        ]);
+        if (isRelativeToFile) {
+          const absPath = path.resolve(directory, url);
+          url = `/content/${path.relative(contentFolder, absPath)}`;
+        }
+        const resolver = images[url];
+        const result = (await resolver()).default;
+        return result;
       }
-      const resolver = images[url];
-      const result = (await resolver()).default;
-      return result;
     }
+    return `${base}${url}`;
   }
   return url;
 };

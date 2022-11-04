@@ -38,6 +38,7 @@ Explain deploying to github pages -> user.github.io vs user.github.io/website
 
 ## To Do
 - [ ] Fix github pages deploy when using a path (user.github.io/repo)
+  - Links to open graph images are broken in markdown renderer
 - [ ] Improve markdown rendering
   - [ ] charts
     - use directives to add charts

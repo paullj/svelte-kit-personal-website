@@ -46,6 +46,7 @@
     ]
   }}
 />
+
 <ListLayout>
   <PostList slot="posts" {posts} />
   <Pagination slot="pagination" currentPage={1} {totalPosts} />

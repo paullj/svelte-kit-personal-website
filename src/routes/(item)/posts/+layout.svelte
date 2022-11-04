@@ -1,11 +1,12 @@
 <script lang="ts">
   import { afterNavigate } from '$app/navigation';
+  import { base } from '$app/paths';
 
-  let previousPage = '/';
+  let previousPage = `${base}/`;
 
   afterNavigate((navigaton) => {
-    if (!navigaton?.from?.url.pathname.startsWith('/posts'))
-      previousPage = navigaton?.from?.url.pathname ?? '/';
+    if (!navigaton?.from?.url.pathname.includes('/posts'))
+      previousPage = navigaton?.from?.url.pathname ?? `${base}/`;
   });
 
   export const prerender = true;

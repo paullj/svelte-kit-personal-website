@@ -6,6 +6,8 @@
   import seo from '$content/seo.yaml';
   import { page } from '$app/stores';
   import { ogImageDimmensions } from '$lib/config';
+  import { base } from '$app/paths';
+  import { isInternalLink } from '$lib/utils/isExternalLink';
 
   export let data: PageData;
 
@@ -62,7 +64,10 @@
               {#if links}
                 <div class="mr-4 space-x-2 text-sm">
                   {#each Object.entries(links) as [to, url]}
-                    <a href={url} class="underline text-accent-light">{to}</a>
+                    <a
+                      href="{isInternalLink(url) ? base : ''}{url}"
+                      class="underline text-accent-light">{to}</a
+                    >
                   {/each}
                 </div>
               {/if}

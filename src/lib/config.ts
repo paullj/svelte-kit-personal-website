@@ -8,8 +8,8 @@ const relatedPostThreshold = 0.05;
 const searchResultTolerance = 2;
 // Open graph image dimmensions
 const ogImageDimmensions = {
-  width: 800,
-  height: 800
+  width: 1200,
+  height: 630
 };
 // The GitHub user for this repository
 const githubUser = 'paullj';

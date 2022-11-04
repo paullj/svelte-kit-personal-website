@@ -7,17 +7,17 @@ publishedAt: 3 Nov 2022
 ## Adding Images
 You can import images relative to the post's markdown file, using `./path/to/image.png` or relative to the content folder root `/content/posts/image.png`.
 
-![](./image-1.avif)
+<!-- ![](./image-1.avif) -->
 
 ## Figures
 Figure captions are automatically pulled from the alt-text of an image.
 
-![Image with caption](./image-1.avif)
+<!-- ![Image with caption](./image-1.avif) -->
 
 Placing figures directly on consecutive lines in markdown results in the figures being placed in the same block as side by side.
 
-![Image A](./image-2.avif)
-![Image B](/content/posts/Images/image-2.avif)
+<!-- ![Image A](./image-2.avif) -->
+<!-- ![Image B](/content/posts/Images/image-2.avif) -->
 
 ## Lazy Loading
 A `loading=lazy` tag is added to all images to make use of the native lazy loading available on most browers.

@@ -14,6 +14,7 @@
   import seo from '$content/seo.yaml';
   import { page } from '$app/stores';
   import { ogImageDimmensions } from '$lib/config';
+  import { base } from '$app/paths';
 
   export let data: PageData;
 
@@ -22,7 +23,8 @@
 </script>
 
 <!-- This seems quite hacky... -->
-<a href={`/api/posts/${data.slug}/image.png`} class="hidden">OG Image</a>
+
+<a href="{base}/api/posts/{data.slug}/image.png" class="hidden">OG Image</a>
 
 <SvelteSEO
   title={seoTitle}
