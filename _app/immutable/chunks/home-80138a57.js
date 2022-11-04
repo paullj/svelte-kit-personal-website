@@ -1,1 +1,0 @@
-var t={title:"Your Name",subtitle:"Hello, welcome to my website!",links:{Home:"/",About:"/about",Email:"mailto:your@email.com",LinkedIn:"https://www.linkedin.com/",GitHub:"https://www.github.com/"}};export{t as d};

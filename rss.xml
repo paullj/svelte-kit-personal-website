@@ -4,10 +4,10 @@
         <description><![CDATA[Your Name RSS Feed]]></description>
         <link>https://paullj.github.io/svelte-kit-personal-website</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 02 Nov 2022 02:43:55 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 04 Nov 2022 22:29:39 GMT</lastBuildDate>
         <atom:link href="https://paullj.github.io/svelte-kit-personal-website/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Automatic Images]]></title>
+            <title><![CDATA[Images]]></title>
             <link>https://paullj.github.io/svelte-kit-personal-website/posts/images</link>
             <guid isPermaLink="true">https://paullj.github.io/svelte-kit-personal-website/posts/images</guid>
             <pubDate>Thu, 03 Nov 2022 00:00:00 GMT</pubDate>
